@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
+import React from 'react';
 const Contact = () => {
 	return (
 		<div
@@ -10,7 +9,7 @@ const Contact = () => {
 			<h2 className='text-xl text-center text-black dark:text-white mb-4'>
 				Have a question or want to work together? 
 			</h2>
-			<Link href='mailto:mimijang0412@gmail.com'>
+			<a href='mailto:mimijang0412@gmail.com'>
 				<button className='inline-block relative w-[160px] h-[40px] bg-transparent hover:text-black hover:bg-gray-300 mx-10 transition-all ease-in-out duration-1000'>
 					<svg
 						className='btn-svg border absolute left-0 top-0 stroke-black dark:stroke-white transition-all ease-in-out duration-1000'
@@ -29,7 +28,7 @@ const Contact = () => {
 					</svg>
 					<span className='text-black dark:text-white hover:text-black'>Send me an email</span>
 				</button>
-			</Link>
+			</a>
 		</div>
 	);
 };

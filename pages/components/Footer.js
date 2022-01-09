@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
+import Image from 'next/image'
 
 const Footer = () => {
   	const socialMedia = [
@@ -27,7 +28,7 @@ const Footer = () => {
           shadow-white hover:-mt-2 transition-all duration-150' key={i}>
 						<Link href={each.link}>
 							<a>
-								<img src={each.img} alt={each.name} />
+								<Image width='40' height='40' src={each.img} alt={each.name} />
 							</a>
 						</Link>
 					</div>

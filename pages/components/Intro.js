@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import ScrollDownIcon from './ScrollDownIcon';
+import Image from 'next/image';
 
 const Intro = () => {
 	//typing text animation
@@ -65,7 +66,8 @@ const Intro = () => {
 			className='bg-white dark:bg-transparent transition-all duration-400'
 		>
 				<div className='background-container hidden dark:block dark:opacity-100'>
-					<img
+					<Image
+           layout='fill'
 						className='hidden dark:block dark:opacity-100'
 						id='moon'
 						src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png'
