@@ -21,8 +21,8 @@ const BackToTop = ({ handleClick }) => {
 				/>
 			</svg>
 			<span className='text-black dark:text-white hover:text-black'>
-        <span className='left-bar'></span>
-				<span className='right-bar'></span>
+        <span className='left-bar after:bg-black dark:after:bg-white'></span>
+				<span className='right-bar after:bg-black dark:after:bg-white'></span>
 				<svg width='40' height='40'>
 					<line className='top' x1='0' y1='0' x2='120' y2='0' />
 					<line className='left' x1='0' y1='40' x2='0' y2='-80' />

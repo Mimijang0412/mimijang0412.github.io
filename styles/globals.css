@@ -143,14 +143,13 @@ a {
 	height: 40px;
 	width: 40px;
 	display: block;
-	outline: 1px solid lightgray;
 	position: relative;
 	cursor: pointer;
 	transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
 }
 .scroll-up svg line {
 	stroke-width: 1;
-	stroke: darkgray;
+	stroke: lightgray;
 	fill: none;
 	stroke-dasharray: 20;
 	-webkit-transition: all 0.4s ease;
@@ -184,7 +183,6 @@ a {
 }
 .scroll-up .left-bar:after {
 	content: '';
-	background-color: white;
 	width: 18px;
 	height: 1px;
 	display: block;
@@ -206,7 +204,6 @@ a {
 }
 .scroll-up .right-bar:after {
 	content: '';
-	background-color: white;
 	width: 18px;
 	height: 1px;
 	display: block;

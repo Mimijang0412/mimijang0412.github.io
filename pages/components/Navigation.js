@@ -54,7 +54,7 @@ const Navigation = () => {
 				id='nav-wrapper'
 				className='w-full h-full bg-transparent absolute top-8 opacity-0 duration-500 transition-all'
 			>
-				<div className='h-full flex items-center align-middle justify-between'>
+				<div className='h-full flex items-center align-middle justify-between '>
 					<div className='w-1/5 bg-blend-lighten z-[9900]'>
 						<Link href='/'>
 							<a className='block dark:hidden z-50 transition-all opacity-100 hover:opacity-70 duration-300 mt-1'>

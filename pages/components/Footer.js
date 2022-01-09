@@ -28,7 +28,7 @@ const Footer = () => {
           shadow-white hover:-mt-2 transition-all duration-150' key={i}>
 						<Link href={each.link}>
 							<a>
-								<Image width='40' height='40' src={each.img} alt={each.name} />
+								<Image width='50' height='50' src={each.img} alt={each.name} />
 							</a>
 						</Link>
 					</div>

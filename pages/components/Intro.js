@@ -66,13 +66,14 @@ const Intro = () => {
 			className='bg-white dark:bg-transparent transition-all duration-400'
 		>
 				<div className='background-container hidden dark:block dark:opacity-100'>
-					<Image
-           layout='fill'
+					<div id='moon'>
+            <Image
+            layout='fill'
 						className='hidden dark:block dark:opacity-100'
-						id='moon'
 						src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png'
 						alt='moon image'
 					/>
+          </div>
 					<div className='stars'></div>
 					<div className='twinkling'></div>
 					<div className='clouds'></div>

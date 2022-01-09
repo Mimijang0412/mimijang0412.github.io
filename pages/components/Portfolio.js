@@ -156,7 +156,7 @@ const Portfolio = ({ handleClick, show }) => {
 								>
 									<div
 										className='portfolio-name absolute top-0 w-full h-full bg-yellow-300 text-black opacity-0 hover:opacity-100 transition-all duration-700
-                    flex flex-col align-middle justify-center items-center text-center group'
+                    flex flex-col align-middle justify-center items-center text-center group z-[100]'
 									>
 										<div className='absolute top-0 group-hover:top-12 transition-all duration-300 opacity-0 group-hover:opacity-100'>
 											<p className='text-xl font-bold mb-2'>
