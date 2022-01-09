@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image'
 
 const Portfolio = ({ handleClick, show }) => {
 	const [filterBy, setFilterBy] = useState('All');
@@ -173,10 +174,11 @@ const Portfolio = ({ handleClick, show }) => {
 											VIEW
 										</button>
 									</div>
-									<img
+									<Image
 										className='w-full hover:opacity-75'
 										src={filteredProject.imageSrc}
 										alt={filteredProject.name}
+                    layout="fill"
 									/>
 									{/* <div id='modal' className='modal fixed border-red border-2'>
 										<div className='modal-wrapper'>
