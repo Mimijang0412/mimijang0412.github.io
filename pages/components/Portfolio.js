@@ -104,7 +104,6 @@ const Portfolio = ({ handleClick, show }) => {
 			setIsActive(true);
 		}, 100);
 	}
-
 	return (
 		<section
 			id='portfolio'
@@ -179,6 +178,7 @@ const Portfolio = ({ handleClick, show }) => {
 										src={filteredProject.imageSrc}
 										alt={filteredProject.name}
                     layout="fill"
+                    loading="eager"
 									/>
 									{/* <div id='modal' className='modal fixed border-red border-2'>
 										<div className='modal-wrapper'>

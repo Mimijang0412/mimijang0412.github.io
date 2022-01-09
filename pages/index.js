@@ -18,11 +18,9 @@ export default function Home() {
 			let loaderWrapper =
 			document.getElementsByClassName('loader-wrapper')[0];
 			loaderWrapper.style.opacity = 1;
-			(function fade() {
-				(loaderWrapper.style.opacity -= 0.1) < 0
-					? (loaderWrapper.style.display = 'none')
-					: setTimeout(fade, 100);
-			})();
+      setTimeout(() => {
+          loaderWrapper.style.display = 'none'
+      }, 100)
 		};
 	});
 	const backToTop = () => {

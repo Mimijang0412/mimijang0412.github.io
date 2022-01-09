@@ -60,8 +60,8 @@ const Navigation = () => {
 							<a className='block dark:hidden z-50 transition-all opacity-100 hover:opacity-70 duration-300 mt-1'>
 								<Image
 									src='/images/mimi-logo-black.png'
-									width='100'
-									height='90'
+									width='70'
+									height='60'
 									alt='mimi logo'
 								></Image>
 							</a>
@@ -70,8 +70,8 @@ const Navigation = () => {
 							<a className='hidden dark:block z-50 dark:opacity-100 transition-all opacity-100 dark:hover:opacity-70 duration-300 mt-1'>
 								<Image
 									src='/images/mimi-logo-white.png'
-									width='100'
-									height='90'
+									width='70'
+									height='60'
 									alt='mimi logo dark mode'
 								></Image>
 							</a>
