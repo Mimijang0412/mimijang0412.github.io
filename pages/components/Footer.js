@@ -6,7 +6,7 @@ const Footer = () => {
   	const socialMedia = [
 		{
 			name: 'Facebook',
-			link: 'https://www.facebook.com/public/Mimi-Jang',
+			link: 'https://www.facebook.com/mimi.jang.31',
 			img: '/images/facebook.png',
 		},
 		{

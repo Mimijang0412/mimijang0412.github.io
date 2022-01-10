@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
+import Modal from './Modal';
 
-const Portfolio = ({ handleClick, show }) => {
+const Portfolio = (
+	{
+		//  handleClick, show
+	}
+) => {
 	const [filterBy, setFilterBy] = useState('All');
 	const [isActive, setIsActive] = useState(true);
+	const [show, setShow] = useState(false);
+	const [targetModalId, setTargetModalId] = useState();
+
+	const hideModal = () => setShow(false);
+	const showModal = (e) => {
+		setTargetModalId(e.target.id);
+		setShow(true);
+	};
 
 	const filters = [
 		{ name: 'All', status: false },
@@ -15,83 +28,104 @@ const Portfolio = ({ handleClick, show }) => {
 	const projects = [
 		{
 			name: 'McMaster Faculty of Humanities',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/mcmasterhumanities-dskt.png',
-			link: 'https://mcmaster.humanities.ca',
 			imageSrcMbl: '/images/portfolio/mcmasterhumanities-mbl.png',
+			imageSrcThumbnail:
+				'/images/portfolio/mcmasterhumanities-thumbnail.png',
+			link: 'https://mcmaster.humanities.ca',
 			tag: 'All WordPress JavaScript',
 		},
 		{
 			name: 'Roche HCP Portals',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/rochehcpportal-dskt.png',
-			link: 'https://rocheproplus.ca',
 			imageSrcMbl: '/images/portfolio/rochehcpportal-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/rochehcpportal-thumbnail.png',
+			link: 'https://rocheproplus.ca',
 			tag: 'All AEM JavaScript Etc',
 		},
 		{
 			name: 'MerckConnect',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/merckconnect-dskt.png',
-			link: 'https://merckconnect.ca',
 			imageSrcMbl: '/images/portfolio/merckconnect-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/merckconnect-thumbnail.png',
+			link: 'https://merckconnect.ca',
 			tag: 'All JavaScript',
 		},
 		{
 			name: 'Merck.ca',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/merck-dskt.png',
-			link: 'https://merck.ca',
 			imageSrcMbl: '/images/portfolio/merck-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/merck-thumbnail.png',
+			link: 'https://www.merck.ca/en/home/',
 			tag: 'All Tridion etc',
 		},
 		{
 			name: 'Budweiser Contest',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/budweiser-dskt.png',
-			link: '/',
 			imageSrcMbl: '/images/portfolio/budweiser-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/budweiser-thumbnail.png',
+			link: '' /*'https://budweiserhockey.elitesitereview.com/'*/,
 			tag: 'All JavaScript',
 		},
 		{
 			name: 'Pepsi Bt Cup',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/btcup-dskt.png',
-			link: '/',
 			imageSrcMbl: '/images/portfolio/btcup-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/btcup-thumbnail.png',
+			link: '',
 			tag: 'All JavaScript Laravel Php',
 		},
 		{
 			name: 'Labatt',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/labatt-dskt.png',
-			link: '/',
 			imageSrcMbl: '/images/portfolio/labatt-mbl.png',
-			tag: 'All JavaScript React Next',
+			imageSrcThumbnail: '/images/portfolio/labatt-thumbnail.png',
+			link: '' /*'https://shopbeergearcontest.elitesitereview.com/'*/,
+			tag: 'All JavaScript ReactJS NextJS',
 		},
 		{
 			name: 'Merck Harmony',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/merckharmony-dskt.png',
-			link: '/',
 			imageSrcMbl: '/images/portfolio/merckharmony-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/merckharmony-thumbnail.png',
+			link: 'https://harmonyorganon.ca/',
 			tag: 'All Tridion etc',
 		},
 		{
 			name: 'B honey',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/bhoney-dskt.png',
-			link: '/',
 			imageSrcMbl: '/images/portfolio/bhoney-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/bhoney-thumbnail.png',
+			link: '',
 			tag: 'All JavaScript',
 		},
 		{
 			name: 'Merck Essencelle',
-			description: 'Desctiptionsss',
+			description: 'Elite Digital Project',
 			imageSrc: '/images/portfolio/merckessencelle-dskt.png',
-			link: '/',
 			imageSrcMbl: '/images/portfolio/merckessencelle-mbl.png',
+			imageSrcThumbnail:
+				'/images/portfolio/merckessencelle-thumbnail.png',
+			link: '' /*'https://merck-unbrandedc.elitesitereview.com/' */,
 			tag: 'All JavaScript WordPress',
+		},
+		{
+			name: "Mimi Jang's website",
+			description: "Mimi Jang's website",
+			imageSrc: '/images/portfolio/mimijang-dskt.png',
+			imageSrcMbl: '/images/portfolio/mimijang-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/mimijang-thumbnail.png',
+			link: '/',
+			tag: 'All JavaScript ReactJS NextJS',
 		},
 	];
 
@@ -150,7 +184,7 @@ const Portfolio = ({ handleClick, show }) => {
 								<div
 									className={`portfolio-item-active ${
 										isActive ? 'is-animated' : 'hidden'
-									} overflow-hidden relative w-full h-60 lg:h-80 sm:w-[49%] lg:w-[33%] my-1 sm:my-1.5 lg:my-[2px] text-black dark:text-white`}
+									} overflow-hidden relative w-60 mx-auto mb-3 h-60 lg:h-80 sm:w-[49%] lg:w-[33%] my-1 sm:my-1.5 lg:my-[2px] text-black dark:text-white`}
 									key={index}
 								>
 									<div
@@ -167,26 +201,34 @@ const Portfolio = ({ handleClick, show }) => {
 										</div>
 										<button
 											// href={filteredProject.link}
-											onClick={handleClick}
+											id={index}
+											onClick={showModal}
 											className='inline-block py-2 px-6 border-1 border-black text-black absolute bottom-0 group-hover:bottom-10 transition-all duration-300 opacity-0 group-hover:opacity-100'
 										>
 											VIEW
 										</button>
 									</div>
-									<Image
-										className='w-full hover:opacity-75'
-										src={filteredProject.imageSrc}
-										alt={filteredProject.name}
-                    layout="fill"
-                    loading="eager"
-									/>
-									{/* <div id='modal' className='modal fixed border-red border-2'>
-										<div className='modal-wrapper'>
-											<div className='' key={index}>
-												<h2>{filteredProject.name}</h2>
-											</div>
+									<div className='overflow-scroll'>
+										<div className='w-full h-full'>
+											<Image
+												className='hover:opacity-75'
+												src={
+													filteredProject.imageSrcThumbnail
+												}
+												alt={filteredProject.name}
+												layout='fill'
+												loading='eager'
+											/>
 										</div>
-									</div> */}
+									</div>
+									<Modal
+										content={filteredProject}
+										modalId={index}
+										targetModalId={targetModalId}
+										showProp={show}
+										handleClick={showModal}
+										handleClose={hideModal}
+									/>
 								</div>
 							))}
 					</div>
