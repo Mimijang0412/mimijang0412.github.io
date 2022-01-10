@@ -11,10 +11,6 @@ import Modal from './components/Modal.js';
 import BackToTop from './components/BackToTop';
 
 export default function Home() {
-	// const [show, setShow] = useState(false);
-	// const hideModal = () => setShow(false);
-	// const showModal = () => setShow(true);
-
 	useEffect(() => {
 		window.onload = function () {
 			let loaderWrapper =
@@ -60,8 +56,6 @@ export default function Home() {
 					<span className='loader-inner'></span>
 				</span>
 			</div>
-			{/* modal */}
-			{/* <Modal showProp={show} handleClick={showModal} handleClose={hideModal} /> */}
 			<Header />
 			<Navigation />
 			<Intro />
@@ -81,10 +75,8 @@ export default function Home() {
 					&160;
 				</div>
 			</div>
-			<div className='reveal'>
-				<Portfolio 
-        // handleClick={showModal}  show={show}
-        />
+			<div id="modal-position" className='reveal'>
+				<Portfolio />
 			</div>
 			<div className='bg-white dark:bg-black'>
 				<div className='w-3/4 h-[1px] mx-auto text-[0] bg-gray-400'>

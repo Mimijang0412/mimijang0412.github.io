@@ -2,20 +2,27 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Modal from './Modal';
 
-const Portfolio = (
-	{
-		//  handleClick, show
-	}
-) => {
+const Portfolio = () => {
 	const [filterBy, setFilterBy] = useState('All');
 	const [isActive, setIsActive] = useState(true);
 	const [show, setShow] = useState(false);
 	const [targetModalId, setTargetModalId] = useState();
 
-	const hideModal = () => setShow(false);
+	const hideModal = (e) => {
+		setShow(false);
+		// let modal = e.target.closest('.modal')
+		// modal.remove()
+	};
+
 	const showModal = (e) => {
 		setTargetModalId(e.target.id);
 		setShow(true);
+		let modal = document.getElementById('modal-' + e.target.id);
+		let position = document.getElementById('modal-position');
+		// let nodeModal = modal.cloneNode(true)
+		position.insertAdjacentElement('beforebegin', modal);
+		// nodeModal.parentNode.insertBefore
+		// body.appendChild(nodeModal)
 	};
 
 	const filters = [
@@ -35,6 +42,11 @@ const Portfolio = (
 				'/images/portfolio/mcmasterhumanities-thumbnail.png',
 			link: 'https://mcmaster.humanities.ca',
 			tag: 'All WordPress JavaScript',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'Roche HCP Portals',
@@ -44,6 +56,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/rochehcpportal-thumbnail.png',
 			link: 'https://rocheproplus.ca',
 			tag: 'All AEM JavaScript Etc',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'MerckConnect',
@@ -53,6 +70,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/merckconnect-thumbnail.png',
 			link: 'https://merckconnect.ca',
 			tag: 'All JavaScript',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'Merck.ca',
@@ -62,6 +84,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/merck-thumbnail.png',
 			link: 'https://www.merck.ca/en/home/',
 			tag: 'All Tridion etc',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'Budweiser Contest',
@@ -71,6 +98,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/budweiser-thumbnail.png',
 			link: '' /*'https://budweiserhockey.elitesitereview.com/'*/,
 			tag: 'All JavaScript',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'Pepsi Bt Cup',
@@ -80,6 +112,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/btcup-thumbnail.png',
 			link: '',
 			tag: 'All JavaScript Laravel Php',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'Labatt',
@@ -89,6 +126,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/labatt-thumbnail.png',
 			link: '' /*'https://shopbeergearcontest.elitesitereview.com/'*/,
 			tag: 'All JavaScript ReactJS NextJS',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'Merck Harmony',
@@ -98,6 +140,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/merckharmony-thumbnail.png',
 			link: 'https://harmonyorganon.ca/',
 			tag: 'All Tridion etc',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'B honey',
@@ -107,6 +154,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/bhoney-thumbnail.png',
 			link: '',
 			tag: 'All JavaScript',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: 'Merck Essencelle',
@@ -117,6 +169,11 @@ const Portfolio = (
 				'/images/portfolio/merckessencelle-thumbnail.png',
 			link: '' /*'https://merck-unbrandedc.elitesitereview.com/' */,
 			tag: 'All JavaScript WordPress',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 		{
 			name: "Mimi Jang's website",
@@ -126,6 +183,11 @@ const Portfolio = (
 			imageSrcThumbnail: '/images/portfolio/mimijang-thumbnail.png',
 			link: '/',
 			tag: 'All JavaScript ReactJS NextJS',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
 		},
 	];
 

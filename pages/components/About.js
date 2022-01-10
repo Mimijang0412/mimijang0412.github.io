@@ -14,6 +14,7 @@ const About = () => {
 						width='400'
 						height='400'
 						alt='mimi jang'
+						loading='eager'
 					/>
 				</div>
 				<div>
