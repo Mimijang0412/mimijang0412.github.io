@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Modal from './Modal';
 
@@ -12,6 +12,8 @@ const Portfolio = () => {
 		setShow(false);
 		// let modal = e.target.closest('.modal')
 		// modal.remove()
+		// Allow scrolling body tag when modal is not active
+		document.documentElement.classList.remove('overflow-hidden');
 	};
 
 	const showModal = (e) => {
@@ -19,11 +21,19 @@ const Portfolio = () => {
 		setShow(true);
 		let modal = document.getElementById('modal-' + e.target.id);
 		let position = document.getElementById('modal-position');
-		// let nodeModal = modal.cloneNode(true)
 		position.insertAdjacentElement('beforebegin', modal);
-		// nodeModal.parentNode.insertBefore
-		// body.appendChild(nodeModal)
+		// Disable scrolling body tag when modal active
+		document.documentElement.classList.add('overflow-hidden');
 	};
+
+	useEffect(() => {
+		//escape key to close the modal
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') {
+				hideModal();
+			}
+		});
+	});
 
 	const filters = [
 		{ name: 'All', status: false },
@@ -168,7 +178,7 @@ const Portfolio = () => {
 			imageSrcThumbnail:
 				'/images/portfolio/merckessencelle-thumbnail.png',
 			link: '' /*'https://merck-unbrandedc.elitesitereview.com/' */,
-			tag: 'All JavaScript WordPress',
+			tag: 'All WordPress',
 			desktopImgHeight: '550',
 			desktopImgHeightMd: '1000',
 			desktopImgHeightLg: '2000',
@@ -177,12 +187,27 @@ const Portfolio = () => {
 		},
 		{
 			name: "Mimi Jang's website",
-			description: "Mimi Jang's website",
+			description: "Mimi Jang's personal website",
 			imageSrc: '/images/portfolio/mimijang-dskt.png',
 			imageSrcMbl: '/images/portfolio/mimijang-mbl.png',
 			imageSrcThumbnail: '/images/portfolio/mimijang-thumbnail.png',
 			link: '/',
 			tag: 'All JavaScript ReactJS NextJS',
+			desktopImgHeight: '550',
+			desktopImgHeightMd: '1000',
+			desktopImgHeightLg: '2000',
+			mobileImgHeight: '1500',
+			mobileImgHeightLg: '5000',
+		},
+		{
+			name: 'CanEra Homes',
+			description:
+				"CanEra Homes Canadian construction company's website ",
+			imageSrc: '/images/portfolio/canerahomes-dskt.png',
+			imageSrcMbl: '/images/portfolio/canerahomes-mbl.png',
+			imageSrcThumbnail: '/images/portfolio/canerahomes-thumbnail.png',
+			link: 'https://www.canerahomes.ca',
+			tag: 'All wix etc',
 			desktopImgHeight: '550',
 			desktopImgHeightMd: '1000',
 			desktopImgHeightLg: '2000',

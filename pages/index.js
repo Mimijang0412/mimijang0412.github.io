@@ -7,7 +7,6 @@ import Portfolio from './components/Portfolio';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Modal from './components/Modal.js';
 import BackToTop from './components/BackToTop';
 
 export default function Home() {
@@ -19,12 +18,21 @@ export default function Home() {
 			setTimeout(() => {
 				loaderWrapper.style.opacity = 0;
 				loaderWrapper.style.zIndex = -1;
-			}, 150);
+			}, 500);
 		};
+
+		setTimeout(() => {
+			let loaderWrapper =
+				document.getElementsByClassName('loader-wrapper')[0];
+			loaderWrapper.style.opacity = 0;
+			loaderWrapper.style.zIndex = -1;
+		}, 2000);
 	});
+
 	const backToTop = () => {
 		window.scroll({ top: 0, behavior: 'smooth' });
 	};
+
 	useEffect(() => {
 		setTimeout(() => {
 			window.onscroll = function () {
@@ -75,7 +83,7 @@ export default function Home() {
 					&160;
 				</div>
 			</div>
-			<div id="modal-position" className='reveal'>
+			<div id='modal-position' className='reveal'>
 				<Portfolio />
 			</div>
 			<div className='bg-white dark:bg-black'>
@@ -85,7 +93,7 @@ export default function Home() {
 			</div>
 			<div className='reveal'>
 				<Contact />
-				<BackToTop handleClick={backToTop}/>
+				<BackToTop handleClick={backToTop} />
 				<Footer />
 			</div>
 		</div>
