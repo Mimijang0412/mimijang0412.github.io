@@ -63,6 +63,7 @@ const Navigation = () => {
 									width='70'
 									height='60'
 									alt='mimi logo'
+                  loading='eager'
 								></Image>
 							</a>
 						</Link>

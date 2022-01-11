@@ -50,7 +50,7 @@ const Portfolio = () => {
 			imageSrcMbl: '/images/portfolio/mcmasterhumanities-mbl.png',
 			imageSrcThumbnail:
 				'/images/portfolio/mcmasterhumanities-thumbnail.png',
-			link: 'https://mcmaster.humanities.ca',
+			link: 'https://humanities.mcmaster.ca',
 			tag: 'All WordPress JavaScript',
 			desktopImgHeight: '550',
 			desktopImgHeightMd: '1000',
@@ -290,7 +290,7 @@ const Portfolio = () => {
 											// href={filteredProject.link}
 											id={index}
 											onClick={showModal}
-											className='inline-block py-2 px-6 border-1 border-black text-black absolute bottom-0 group-hover:bottom-10 transition-all duration-300 opacity-0 group-hover:opacity-100'
+											className='inline-block py-2 px-6 border-1 border-black text-black absolute bottom-0 group-hover:bottom-14 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:font-bold'
 										>
 											VIEW
 										</button>

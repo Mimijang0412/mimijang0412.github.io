@@ -30,7 +30,10 @@ export default function Home() {
 	});
 
 	const backToTop = () => {
-		window.scroll({ top: 0, behavior: 'smooth' });
+		window.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		});
 	};
 
 	useEffect(() => {
